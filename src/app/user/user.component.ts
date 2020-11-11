@@ -9,7 +9,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class UserComponent implements OnInit {
 name;
   constructor(
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
+  //  private paramMap: ParamMap
   ) { }
 
   ngOnInit(): void {
@@ -18,6 +19,9 @@ name;
       this.name = params['name'];
       console.log(this.name);
     });
+    this.route.paramMap.subscribe(result => {
+      console.log(result.get('id'), result.keys)
+    })
   }
 
 }

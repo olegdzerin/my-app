@@ -3,6 +3,19 @@
 <nav>
   <ul>
     <li><a routerLink="../products">Relative Route to second component</a></li>
+    <li><a routerLink="/products">Relative Route to second component</a></li>
   </ul>
 </nav>
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let user of users">
+      <div>{{user.name}}</div>
+      <div>
+        <a [routerLink]="'../user/' + user.id">Перейти </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <router-outlet></router-outlet>
